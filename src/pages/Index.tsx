@@ -12,10 +12,10 @@ import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const [members, setMembers] = useState([
-    { id: 1, name: "Mary Wanjiku", phone: "+254712345678", contribution: 5000, status: "paid", lastPayment: "2024-07-01" },
-    { id: 2, name: "John Kamau", phone: "+254723456789", contribution: 3000, status: "pending", lastPayment: "2024-06-15" },
-    { id: 3, name: "Grace Njeri", phone: "+254734567890", contribution: 5000, status: "paid", lastPayment: "2024-07-02" },
-    { id: 4, name: "Peter Mwangi", phone: "+254745678901", contribution: 0, status: "overdue", lastPayment: "2024-05-20" },
+    { id: 1, name: "Mary Wanjiku", phone: "+254712345678", contribution: 5000, status: "paid" as const, lastPayment: "2024-07-01" },
+    { id: 2, name: "John Kamau", phone: "+254723456789", contribution: 3000, status: "pending" as const, lastPayment: "2024-06-15" },
+    { id: 3, name: "Grace Njeri", phone: "+254734567890", contribution: 5000, status: "paid" as const, lastPayment: "2024-07-02" },
+    { id: 4, name: "Peter Mwangi", phone: "+254745678901", contribution: 0, status: "overdue" as const, lastPayment: "2024-05-20" },
   ]);
 
   const [isAddMemberOpen, setIsAddMemberOpen] = useState(false);
