@@ -4,70 +4,49 @@
 
 **URL**: https://lovable.dev/projects/8e97107b-b69b-4ed7-9c6c-c19140dcae1f
 
-## How can I edit this code?
+# Chama‑Pay‑Pal 🌱
 
-There are several ways of editing your application.
+**Chama‑Pay‑Pal** is a web and mobile finance app designed to empower **Chama** (rotating savings groups) by providing a secure, easy-to-use platform for managing contributions, meetings, proposals, and integrated payments.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8e97107b-b69b-4ed7-9c6c-c19140dcae1f) and start prompting.
+## 📌 Live Demo
 
-Changes made via Lovable will be committed automatically to this repo.
+Explore the live app here: https://chama-pay-pal.lovable.app/
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🧭 Key Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Group & personal contribution tracking**  
+- **Multi-group support** — manage several Chamas from one account  
+- **Meeting tools** — agendas, attendance tracking  
+- **Member lists** with profile support (photos, bio, roles)  
+- **Proposals & announcements** — post, comment, interact  
+- **Secure payments** via Credit/Debit Card, MPesa, and PayPal integration  
+- **Apple Pay & Google Pay** support (mobile/web compatibility)  
 
-Follow these steps:
+These features mirror those listed on the Chama App across platforms :contentReference[oaicite:1]{index=1}.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🛠️ Tech Stack
 
-# Step 3: Install the necessary dependencies.
-npm i
+*(Please adjust based on your actual stack)*
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- **Frontend**: React, Vue, or similar
+- **Backend**: Node.js / Express (or Laravel, Django, etc.)
+- **Database**: MongoDB / PostgreSQL / MySQL
+- **No-Code**: Built and deployed with **Lovable.app**  
+- **Payment Integration**:  
+  - Stripe, MPesa, Apple Pay/Google Pay  
+  - PayPal integration via Lovable––see notes below
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🚀 Setup & Run Locally
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8e97107b-b69b-4ed7-9c6c-c19140dcae1f) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/cmotau-bit/chama-pay-pal.git
+   cd chama-pay-pal
