@@ -52,26 +52,28 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
       {/* Header */}
-      <div className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="bg-white/80 backdrop-blur-sm shadow-lg border-b border-emerald-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Chama Payment Bot</h1>
-              <p className="text-sm text-gray-600">Automated payment reminders & tracking</p>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                Chama Payment Bot
+              </h1>
+              <p className="text-sm text-slate-600 mt-1">Automated payment reminders & tracking</p>
             </div>
             <div className="flex items-center space-x-3">
               <Button 
                 onClick={handleSendReminders}
-                className="bg-green-600 hover:bg-green-700 text-white"
+                className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-lg"
               >
                 <Bell className="w-4 h-4 mr-2" />
                 Send Reminders
               </Button>
               <Button 
                 onClick={() => setIsAddMemberOpen(true)}
-                className="bg-blue-600 hover:bg-blue-700 text-white"
+                className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white shadow-lg"
               >
                 <Plus className="w-4 h-4 mr-2" />
                 Add Member
@@ -84,53 +86,69 @@ const Index = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card className="bg-white hover:shadow-lg transition-shadow">
+          <Card className="bg-white/70 backdrop-blur-sm hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-gray-600">Total Contributions</CardTitle>
-              <DollarSign className="h-4 w-4 text-green-600" />
+              <CardTitle className="text-sm font-medium text-slate-600">Total Contributions</CardTitle>
+              <div className="p-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg">
+                <DollarSign className="h-4 w-4 text-white" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-green-700">KES {totalContributions.toLocaleString()}</div>
-              <p className="text-xs text-gray-500">
+              <div className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                KES {totalContributions.toLocaleString()}
+              </div>
+              <p className="text-xs text-slate-500 mt-1">
                 {progressPercentage.toFixed(1)}% of goal reached
               </p>
             </CardContent>
           </Card>
 
-          <Card className="bg-white hover:shadow-lg transition-shadow">
+          <Card className="bg-white/70 backdrop-blur-sm hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-gray-600">Total Members</CardTitle>
-              <Users className="h-4 w-4 text-blue-600" />
+              <CardTitle className="text-sm font-medium text-slate-600">Total Members</CardTitle>
+              <div className="p-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg">
+                <Users className="h-4 w-4 text-white" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-blue-700">{members.length}</div>
-              <p className="text-xs text-gray-500">
+              <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                {members.length}
+              </div>
+              <p className="text-xs text-slate-500 mt-1">
                 {paidMembers} paid this month
               </p>
             </CardContent>
           </Card>
 
-          <Card className="bg-white hover:shadow-lg transition-shadow">
+          <Card className="bg-white/70 backdrop-blur-sm hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-gray-600">Pending Payments</CardTitle>
-              <Clock className="h-4 w-4 text-amber-600" />
+              <CardTitle className="text-sm font-medium text-slate-600">Pending Payments</CardTitle>
+              <div className="p-2 bg-gradient-to-r from-amber-500 to-orange-500 rounded-lg">
+                <Clock className="h-4 w-4 text-white" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-amber-700">{pendingMembers}</div>
-              <p className="text-xs text-gray-500">
+              <div className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                {pendingMembers}
+              </div>
+              <p className="text-xs text-slate-500 mt-1">
                 {overdueMembers} overdue
               </p>
             </CardContent>
           </Card>
 
-          <Card className="bg-white hover:shadow-lg transition-shadow">
+          <Card className="bg-white/70 backdrop-blur-sm hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-gray-600">Monthly Goal</CardTitle>
-              <TrendingUp className="h-4 w-4 text-purple-600" />
+              <CardTitle className="text-sm font-medium text-slate-600">Monthly Goal</CardTitle>
+              <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">
+                <TrendingUp className="h-4 w-4 text-white" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-purple-700">KES {contributionGoal.toLocaleString()}</div>
-              <p className="text-xs text-gray-500">
+              <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                KES {contributionGoal.toLocaleString()}
+              </div>
+              <p className="text-xs text-slate-500 mt-1">
                 KES {(contributionGoal - totalContributions).toLocaleString()} remaining
               </p>
             </CardContent>
@@ -138,14 +156,14 @@ const Index = () => {
         </div>
 
         {/* Progress Bar */}
-        <Card className="mb-8 bg-gradient-to-r from-green-500 to-emerald-600 text-white">
+        <Card className="mb-8 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white shadow-xl border-0">
           <CardHeader>
-            <CardTitle className="text-white">Monthly Progress</CardTitle>
+            <CardTitle className="text-white text-xl">Monthly Progress</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
-              <Progress value={progressPercentage} className="h-3 bg-green-200" />
-              <div className="flex justify-between text-sm">
+            <div className="space-y-4">
+              <Progress value={progressPercentage} className="h-4 bg-white/20" />
+              <div className="flex justify-between text-sm font-medium">
                 <span>KES {totalContributions.toLocaleString()} collected</span>
                 <span>Goal: KES {contributionGoal.toLocaleString()}</span>
               </div>
@@ -165,20 +183,22 @@ const Index = () => {
             <ContributionSettings />
             
             {/* Quick Actions */}
-            <Card>
+            <Card className="bg-white/70 backdrop-blur-sm shadow-lg border-0">
               <CardHeader>
-                <CardTitle className="text-lg">Quick Actions</CardTitle>
+                <CardTitle className="text-lg bg-gradient-to-r from-slate-700 to-slate-600 bg-clip-text text-transparent">
+                  Quick Actions
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button className="w-full justify-start" variant="outline">
+                <Button className="w-full justify-start bg-gradient-to-r from-slate-100 to-slate-200 hover:from-slate-200 hover:to-slate-300 text-slate-700 border-0" variant="outline">
                   <FileText className="w-4 h-4 mr-2" />
                   Generate Report
                 </Button>
-                <Button className="w-full justify-start" variant="outline">
+                <Button className="w-full justify-start bg-gradient-to-r from-slate-100 to-slate-200 hover:from-slate-200 hover:to-slate-300 text-slate-700 border-0" variant="outline">
                   <Bell className="w-4 h-4 mr-2" />
                   Schedule Reminders
                 </Button>
-                <Button className="w-full justify-start" variant="outline">
+                <Button className="w-full justify-start bg-gradient-to-r from-slate-100 to-slate-200 hover:from-slate-200 hover:to-slate-300 text-slate-700 border-0" variant="outline">
                   <TrendingUp className="w-4 h-4 mr-2" />
                   View Analytics
                 </Button>
@@ -186,21 +206,35 @@ const Index = () => {
             </Card>
 
             {/* Subscription Card */}
-            <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+            <Card className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border-0 shadow-lg">
               <CardHeader>
-                <CardTitle className="text-lg text-blue-900">Premium Features</CardTitle>
+                <CardTitle className="text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Premium Features
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-blue-700 mb-4">
+                <p className="text-sm text-slate-600 mb-4">
                   Unlock advanced features for just KES 100/month
                 </p>
-                <ul className="text-xs text-blue-600 space-y-1 mb-4">
-                  <li>• SMS Reminders</li>
-                  <li>• PDF Reports</li>
-                  <li>• Advanced Analytics</li>
-                  <li>• Custom Notifications</li>
+                <ul className="text-xs text-slate-500 space-y-2 mb-4">
+                  <li className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                    SMS Reminders
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                    PDF Reports
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></div>
+                    Advanced Analytics
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-1.5 h-1.5 bg-pink-500 rounded-full mr-2"></div>
+                    Custom Notifications
+                  </li>
                 </ul>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-lg border-0">
                   Upgrade Now
                 </Button>
               </CardContent>
